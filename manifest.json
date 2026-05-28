@@ -1,8 +1,9 @@
 {
   "name": "Japan Onsen Advisor",
   "short_name": "japan-onsen-",
-  "start_url": "/",
+  "start_url": "/japan-onsen-advisor/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#6366f1"
+  "theme_color": "#6366f1",
+  "scope": "/japan-onsen-advisor/"
 }
