@@ -3,8 +3,8 @@
 ## 概要
 
 **サービス名**: Japan Onsen Advisor
-**バージョン**: 1.0.0
-**更新日**: 2026-05-27
+**バージョン**: 1.1.0
+**更新日**: 2026-05-29
 **URL**: https://appadaycreator.com/japan-onsen-advisor/
 
 目的・予算・人数・好みから最適な温泉地タイプと旅館選びのポイントを6問で診断。草津・箱根・別府・有馬・道後など全国の名湯からあなたにぴったりの温泉地を紹介。登録不要・完全無料。
@@ -57,6 +57,19 @@
 - [✈️ 国内旅行費用シミュレーター](https://appadaycreator.com/domestic-travel-planner/)
 - [旅行スタイル診断](https://appadaycreator.com/travel-style-finder/)
 - [ホテルvsAirbnb比較診断](https://appadaycreator.com/hotel-vs-airbnb-advisor/)
+
+## 変更履歴
+
+### v1.1.0 (2026-05-29)
+- PWA theme-color を `#7c3aed` → `#2563EB` に統一（全ページ + manifest.json）
+- manifest.json short_name を "japan-onsen-" → "温泉診断" に修正
+- manifest.json に icons フィールド追加（SVG絵文字）
+- 診断結果カードに X・LINE シェアボタンと楽天トラベル予約リンクを追加
+- HowToスキーマをサービス固有の手順（6問診断）に更新
+- index.html 重複 canonical タグを削除
+
+### v1.0.0 (2026-05-27)
+- 初回リリース
 
 ## テスト
 
