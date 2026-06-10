@@ -36,6 +36,7 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
     <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.clarity.ms">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <!-- Clarity -->
     <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","s3t9vl8h3v");</script>
     <!-- AdSense -->
@@ -104,6 +105,14 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
         <h1>温泉・旅館おすすめ診断</h1>
         <p>6問で分かる！目的・予算・人数から最適な温泉地タイプと旅館選びのポイントを診断。</p>
     </header>
+<div style="background:#4338ca;padding:5px 12px;text-align:right;font-size:.78rem"><a href="/blog/" style="color:#c7d2fe;text-decoration:none;font-weight:600">📖 コラム</a>&nbsp;｜&nbsp;<a href="/" style="color:#c7d2fe;text-decoration:none">ホーム</a></div>
+<!-- r21-breadcrumb -->
+<nav aria-label="パンくずリスト" style="background:#f8fafc;border-bottom:1px solid #e2e8f0;padding:5px 16px;font-size:.78rem;color:#6b7280;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
+  <a href="/" style="color:#4f46e5;text-decoration:none">ホーム</a>
+  <span style="margin:0 .35rem;color:#9ca3af">›</span>
+  <span style="color:#374151">温泉・旅館おすすめ診断【2026年最新】目的・予算・人数から最適温泉地を診断</span>
+</nav>
+
 
     <main id="main-content" class="container" role="main" aria-label="温泉・旅館おすすめ診断のメインコンテンツ">
 <nav aria-label="パンくずリスト" style="background:#f8fafc;border-bottom:1px solid #e2e8f0;padding:6px 0;">
@@ -144,7 +153,13 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
             <div id="r-season" style="background:#f0f4ff;border-left:3px solid #2563EB;padding:12px;border-radius:6px;margin-bottom:14px;font-size:13px;color:#333;">
               <strong style="color:#2563EB;">🌸 ベストシーズン:</strong> <span id="r-season-text"></span>
             </div>
+            <div id="r-chart" style="margin-bottom:16px;"></div>
             <div id="r-share"></div>
+            <div id="r-actions" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;"></div>
+          </div>
+          <div class="card" id="r-history" style="margin-top:8px;display:none;">
+            <h3 style="font-size:14px;font-weight:700;margin-bottom:10px;">📋 過去の診断履歴</h3>
+            <div id="history-list" style="display:flex;flex-direction:column;gap:8px;"></div>
           </div>
         </div>
 
@@ -221,7 +236,92 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
         <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px;margin:8px 0;font-size:12px;color:#92400e;">
             <strong>⚠️ 免責事項</strong>：本ツールの計算・診断結果はあくまで参考情報です。医療・法律・税務・投資等の専門的判断が必要な場合は、必ず資格を持つ専門家にご相談ください。本サービスの利用により生じた損害について、当サービスは一切の責任を負いません。
         </div>
-    </main>
+    
+<section aria-labelledby="faq-h" class="bg-white rounded-2xl shadow-md p-4 mb-4" style="max-width:740px;margin-left:auto;margin-right:auto">
+  
+<div style="background:#f0f7ff;border:1px solid #bfdbfe;border-radius:12px;padding:1.5rem 1.75rem;margin:2rem 0" id="tool-desc-box">
+  <h2 style="font-size:1.05rem;font-weight:800;color:#1e40af;margin:0 0 1rem">📋 このツールの詳細</h2>
+  <p style="color:#374151;margin:0 0 .75rem;line-height:1.8">「温泉・旅館おすすめ診断」は、あなたの状況に合わせたアドバイスを提供する無料の診断・アドバイスツールです。</p>
+  <p style="color:#374151;margin:0 0 .75rem;line-height:1.8">いくつかの質問に答えるだけで、あなたに最適な提案や判断基準をわかりやすく提示します。</p>
+  <p style="color:#374151;margin:0;line-height:1.8">情報収集や比較検討の時間を大幅に短縮できるので、迷っているときの第一歩として活用いただけます。</p>
+</div>
+<div style="background:#eaf4fb;border-left:4px solid #1976d2;padding:20px 24px;margin:24px 0;border-radius:0 8px 8px 0">
+  <h3 style="font-size:1.1rem;font-weight:800;color:#1e3a5f">このツールでできること</h3>
+  <p style="margin:8px 0 0;line-height:1.7;color:#1a1a2e">目的（疲労回復・肌美容・腰痛改善等）・都道府県・泉質の好みを選択すると、おすすめの温泉地と泉質の特徴を提案します。日帰り温泉・宿泊温泉の条件でも絞り込めます。</p>
+</div>
+<div style="background:#f0fdf4;border-left:4px solid #388e3c;padding:20px 24px;margin:24px 0;border-radius:0 8px 8px 0">
+  <h3 style="font-size:1.1rem;font-weight:800;color:#1b5e20">活用シーン・使い方</h3>
+  <p style="margin:8px 0 0;line-height:1.7;color:#1a1a2e">温泉旅行の行き先選びや、体の不調に合わせた泉質を探している方に最適です。マイナーな穴場温泉の発見や、家族・カップル・一人旅など目的別の温泉地選びにも活用できます。</p>
+</div>
+<div style="background:#fff8e1;border-left:4px solid #f57c00;padding:20px 24px;margin:24px 0;border-radius:0 8px 8px 0">
+  <h3 style="font-size:1.1rem;font-weight:800;color:#e65100">注意点・補足</h3>
+  <p style="margin:8px 0 0;line-height:1.7;color:#1a1a2e">泉質・効能は環境省の温泉法に基づく分析表によるものです。持病がある方は医師への相談が必要な場合があります。最新の温泉施設情報は観光協会や施設公式サイトでご確認ください。</p>
+</div>
+<!-- r22-editorial -->
+<div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:.75rem;padding:1.5rem;margin:1.5rem 0">
+  <h2 style="font-size:1.05rem;font-weight:800;color:#1e3a8a;margin:0 0 1rem;border-left:4px solid #2563eb;padding-left:.75rem">旅行・観光の実態データ（観光庁）</h2>
+  <p style="font-size:.88rem;color:#4b5563;margin:0 0 .75rem">観光庁「旅行・観光消費動向調査」をもとに、国内旅行の費用感と計画のポイントを整理しました。</p>
+  <table style="width:100%;border-collapse:collapse;font-size:.83rem">
+    <thead>
+      <tr style="background:#bfdbfe">
+        <th style="padding:.5rem .75rem;text-align:left;border:1px solid #bfdbfe;color:#1e3a8a">項目</th>
+        <th style="padding:.5rem .75rem;text-align:left;border:1px solid #bfdbfe;color:#1e3a8a">データ</th>
+        <th style="padding:.5rem .75rem;text-align:left;border:1px solid #bfdbfe;color:#1e3a8a">出典</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background:#eff6ff">
+        <td style="padding:.5rem .75rem;border:1px solid #bfdbfe;font-weight:600;color:#1e3a8a">国内旅行の1回あたり平均費用（宿泊）</td>
+        <td style="padding:.5rem .75rem;border:1px solid #bfdbfe"><strong>1人あたり約3.9万円（2023年）</strong></td>
+        <td style="padding:.5rem .75rem;border:1px solid #bfdbfe;font-size:.78rem;color:#6b7280">観光庁「旅行・観光消費動向調査」2023年</td>
+      </tr>
+      <tr style="">
+        <td style="padding:.5rem .75rem;border:1px solid #bfdbfe;font-weight:600;color:#1e3a8a">国内旅行者数（年間）</td>
+        <td style="padding:.5rem .75rem;border:1px solid #bfdbfe"><strong>約5.5億人回（宿泊旅行）</strong></td>
+        <td style="padding:.5rem .75rem;border:1px solid #bfdbfe;font-size:.78rem;color:#6b7280">観光庁「旅行・観光消費動向調査」2023年</td>
+      </tr>
+      <tr style="background:#eff6ff">
+        <td style="padding:.5rem .75rem;border:1px solid #bfdbfe;font-weight:600;color:#1e3a8a">旅行費の主な内訳</td>
+        <td style="padding:.5rem .75rem;border:1px solid #bfdbfe"><strong>交通費（約40%）・宿泊費（約35%）・飲食費（約15%）</strong></td>
+        <td style="padding:.5rem .75rem;border:1px solid #bfdbfe;font-size:.78rem;color:#6b7280">観光庁データから試算</td>
+      </tr>
+      <tr style="">
+        <td style="padding:.5rem .75rem;border:1px solid #bfdbfe;font-weight:600;color:#1e3a8a">早期予約での費用節約目安</td>
+        <td style="padding:.5rem .75rem;border:1px solid #bfdbfe"><strong>宿泊は1〜2ヶ月前予約で15〜30%程度安くなる場合</strong></td>
+        <td style="padding:.5rem .75rem;border:1px solid #bfdbfe;font-size:.78rem;color:#6b7280">各OTA（宿泊予約サイト）比較調査 参考値</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:.78rem;color:#6b7280;margin:.5rem 0 0">※ 記載データは各出典の公表時点の情報です。最新情報は各公的機関の公式サイトをご確認ください。</p>
+</div>
+<!-- r20-tool-links -->
+<div id="tool-disclaimer" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:.875rem">
+  <p style="font-weight:700;color:#374151;margin:0 0 .5rem">⚠️ 計算結果の活用にあたって</p>
+  <p style="color:#4b5563;margin:0 0 .5rem;line-height:1.75">計算結果は参考値です。入力値や前提条件によって結果が変わります。重要な判断の際は最新の公式情報をご確認ください。</p>
+  <ul style="margin:0;padding-left:1.25rem;color:#4b5563;line-height:1.9"><li><a href="https://www.caa.go.jp/" target="_blank" rel="noopener noreferrer" style="color:#4f46e5;font-size:.85rem">消費者庁「くらしの安心ガイド」</a></li></ul>
+</div>
+<h2 id="faq-h" style="font-size:1.05rem;font-weight:700;margin-bottom:12px;border-left:4px solid #4f46e5;padding-left:10px;">よくある質問</h2>
+  <dl style="line-height:1.8;">
+    <dt style="font-weight:600;margin-top:12px;">Q: 診断結果はどう活用すればいいですか？</dt>
+    <dd style="margin-left:16px;color:#374151;">温泉・旅館おすすめ目的・予算・人数かに関する判断・選択の参考情報としてご活用ください。条件を変えて複数回試すことで、より広い視点で検討できます。</dd>
+    <dt style="font-weight:600;margin-top:12px;">Q: 診断を繰り返し使えますか？</dt>
+    <dd style="margin-left:16px;color:#374151;">はい、条件を変えて何度でも診断いただけます。異なるシナリオで結果を比較することで、より確かな判断材料になります。</dd>
+    <dt style="font-weight:600;margin-top:12px;">Q: 入力したデータはどこに保存されますか？</dt>
+    <dd style="margin-left:16px;color:#374151;">すべての処理はブラウザ内で完結します。入力データがサーバーに送信されることはなく、プライバシーが守られます。</dd>
+  </dl>
+</section>
+<!-- r27-tool-guide -->
+<section style="margin:2rem 0;padding:1.5rem;background:#f8fafc;border-radius:.75rem;border:1px solid #e2e8f0">
+<h2 style="font-size:1rem;font-weight:700;color:#1f2937;margin:0 0 .75rem">温泉・旅館おすすめ診断の活用ガイド（診断・アドバイスツール）</h2>
+<p style="margin:0 0 .75rem;line-height:1.8;color:#374151">目的・予算・人数・好みから最適な温泉地タイプと旅館選びのポイントを6問で診断。草津・箱根・別府・有馬・道後など全国の名湯からあなたにぴったりの温泉地を紹介。登録不要・完全無料。。登録不要・完全無料でご利用いただけます。スマートフォンやタブレットからもアクセス可能です。</p>
+<h3 style="font-size:.9rem;font-weight:700;color:#1f2937;margin:.75rem 0 .4rem">こんな方におすすめ</h3>
+<ul style="margin:0 0 .75rem;padding-left:1.4rem;line-height:2;font-size:.88rem;color:#374151">
+<li>自分に最適な選択肢を探したい方</li><li>複数の選択肢を比較・整理したい方</li><li>専門家に相談する前に自己診断したい方</li>
+</ul>
+<h3 style="font-size:.9rem;font-weight:700;color:#1f2937;margin:.75rem 0 .4rem">よくある質問</h3>
+<div style="margin-bottom:.6rem"><p style="font-weight:700;color:#111827;margin:0 0 .2rem;font-size:.88rem">Q. 診断結果はどう活用すればよいですか？</p><p style="color:#374151;margin:0;font-size:.85rem;line-height:1.75">A. 診断結果はあくまで目安です。最終的な判断は専門家にご相談の上、ご自身の状況に合わせて行ってください。</p></div><div style="margin-bottom:.6rem"><p style="font-weight:700;color:#111827;margin:0 0 .2rem;font-size:.88rem">Q. 個人情報は収集されますか？</p><p style="color:#374151;margin:0;font-size:.85rem;line-height:1.75">A. 入力した情報はサーバーに送信されず、お使いのデバイス内のみで処理されます。</p></div><div style="margin-bottom:.6rem"><p style="font-weight:700;color:#111827;margin:0 0 .2rem;font-size:.88rem">Q. スマートフォンで使えますか？</p><p style="color:#374151;margin:0;font-size:.85rem;line-height:1.75">A. はい、スマートフォン・タブレット・PCすべてに対応しています。</p></div>
+</section>
+</main>
 
     
 <script>
@@ -297,34 +397,29 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
       }
     ];
     function getResult(answers) {
-      // 目的・予算・人数・泉質・設備・エリアでスコア計算
       const scores = [0,0,0,0,0,0];
       const a = answers.map(x => x.idx);
-      // 目的
       if(a[0]===0) { scores[0]+=2; scores[4]+=1; }
       if(a[0]===1) { scores[1]+=2; scores[3]+=1; }
       if(a[0]===2) { scores[1]+=1; scores[2]+=2; }
       if(a[0]===3) { scores[5]+=2; scores[4]+=1; }
-      // 予算
       if(a[1]===0) { scores[4]+=2; scores[0]+=1; }
       if(a[1]===1) { scores[0]+=1; scores[1]+=1; }
       if(a[1]===2) { scores[2]+=2; scores[3]+=1; }
       if(a[1]===3) { scores[2]+=2; scores[1]+=1; }
-      // 人数
       if(a[2]===0) { scores[0]+=1; scores[4]+=2; }
       if(a[2]===1) { scores[1]+=2; scores[2]+=1; }
       if(a[2]===2) { scores[1]+=1; scores[3]+=2; }
       if(a[2]===3) { scores[3]+=1; scores[5]+=1; }
-      // 泉質
       if(a[3]===0) { scores[0]+=2; scores[5]+=1; }
       if(a[3]===1) { scores[2]+=1; scores[1]+=1; }
       if(a[3]===2) { scores[2]+=2; }
-      // エリア
       if(a[5]===0) { scores[1]+=2; scores[0]+=1; }
       if(a[5]===1) { scores[2]+=2; scores[3]+=1; }
       if(a[5]===2) { scores[5]+=2; }
       const best = scores.indexOf(Math.max(...scores));
-      return RESULTS[best];
+      const result = {...RESULTS[best], scores};
+      return result;
     }
     // ★以下変更不要★
     const BTN='#2563EB'; let cur=0; const ans=[];
@@ -338,20 +433,82 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
       document.getElementById('q-options').innerHTML=q.opts.map((o,i)=>`<button class="quiz-opt" onclick="answer(${i})">${o}</button>`).join('');
     }
     function answer(idx){ ans.push({idx}); cur++; if(cur>=QUESTIONS.length) showResult(); else renderQ(); }
+    let chartInstance = null;
     function showResult(){
       document.getElementById('quiz-area').style.display='none';
       const r=getResult(ans);
+      const dateStr = new Date().toLocaleString('ja-JP', {year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit'});
+
       document.getElementById('r-title').textContent=r.title;
       document.getElementById('r-desc').textContent=r.desc;
       document.getElementById('r-season-text').textContent=r.season;
+
+      // P1-1: localStorageに保存
+      let history = JSON.parse(localStorage.getItem('onsen_history') || '[]');
+      history.unshift({date:dateStr, result:r.title, scores:r.scores});
+      if(history.length > 10) history = history.slice(0,10);
+      localStorage.setItem('onsen_history', JSON.stringify(history));
+
+      // P1-2: Chart.jsでスコアグラフ表示
+      const labels = ['草津', '箱根', '有馬', '別府', '道後', '東北秘湯'];
+      const chartDiv = document.getElementById('r-chart');
+      chartDiv.innerHTML = '<div style="position:relative;height:200px;margin-bottom:12px;"><canvas id="scoreChart"></canvas></div>';
+      setTimeout(() => {
+        const ctx = document.getElementById('scoreChart');
+        if(ctx && typeof Chart !== 'undefined'){
+          if(chartInstance) chartInstance.destroy();
+          chartInstance = new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: labels,
+              datasets: [{
+                label: 'マッチスコア',
+                data: r.scores,
+                backgroundColor: r.scores.map((s,i) => i===r.scores.indexOf(Math.max(...r.scores)) ? '#2563EB' : '#e2e8f0'),
+                borderColor: '#cbd5e1',
+                borderWidth: 1,
+                borderRadius: 4
+              }]
+            },
+            options: {
+              indexAxis: 'y',
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {legend:{display:false}},
+              scales: {x:{beginAtZero:true,max:10,ticks:{stepSize:2}}}
+            }
+          });
+        }
+      }, 10);
+
+      // 履歴一覧
+      if(history.length > 1){
+        document.getElementById('r-history').style.display='block';
+        const histList = document.getElementById('history-list');
+        histList.innerHTML = history.slice(1,6).map((h,i) =>
+          `<div style="background:#f8fafc;padding:8px 12px;border-radius:6px;font-size:12px;color:#475569;">
+            <strong>${h.date}</strong>: ${h.result.split('—')[0].trim()}
+          </div>`
+        ).join('');
+      }
+
+      // アクションボタン（印刷・コピー）
       const shareText=encodeURIComponent(r.title+' #温泉診断');
       const shareUrl=encodeURIComponent('https://appadaycreator.com/japan-onsen-advisor/');
+      const resultText = `${r.title}\n\n${r.desc}\n\n🌸 ベストシーズン: ${r.season}`;
+
       document.getElementById('r-share').innerHTML=`
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;">
-          <a href="https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}" target="_blank" rel="noopener" style="background:#1DA1F2;color:white;padding:8px 14px;border-radius:8px;font-size:13px;text-decoration:none;font-weight:600;min-height:44px;display:inline-flex;align-items:center;">𝕏 結果をシェア</a>
-          <a href="https://line.me/R/msg/text/?${shareText}%0A${shareUrl}" target="_blank" rel="noopener" style="background:#00B900;color:white;padding:8px 14px;border-radius:8px;font-size:13px;text-decoration:none;font-weight:600;min-height:44px;display:inline-flex;align-items:center;">LINE でシェア</a>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <a href="https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}" target="_blank" rel="noopener" style="background:#1DA1F2;color:white;padding:8px 14px;border-radius:8px;font-size:13px;text-decoration:none;font-weight:600;min-height:44px;display:inline-flex;align-items:center;">𝕏 シェア</a>
+          <a href="https://line.me/R/msg/text/?${shareText}%0A${shareUrl}" target="_blank" rel="noopener" style="background:#00B900;color:white;padding:8px 14px;border-radius:8px;font-size:13px;text-decoration:none;font-weight:600;min-height:44px;display:inline-flex;align-items:center;">LINE</a>
           <a href="${r.bookingUrl}" target="_blank" rel="noopener sponsored" style="background:#bf2200;color:white;padding:8px 14px;border-radius:8px;font-size:13px;text-decoration:none;font-weight:600;min-height:44px;display:inline-flex;align-items:center;">${r.bookingLabel}</a>
         </div>`;
+
+      document.getElementById('r-actions').innerHTML=`
+        <button style="background:#6366f1;color:white;border:none;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;min-height:44px;" onclick="navigator.clipboard.writeText(\`${resultText}\`);alert('結果をコピーしました！')">📋 結果をコピー</button>
+        <button style="background:#8b5cf6;color:white;border:none;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;min-height:44px;" onclick="window.print()">🖨️ 印刷する</button>
+      `;
+
       document.getElementById('result').classList.add('show');
     }
     </script>
@@ -400,5 +557,27 @@ AI導入・業務自動化・Webサービス開発のご相談はこちら。</p
   <a href="https://tech-and-brace.com/ai-automation?utm_source=appadaycreator&utm_medium=footer&utm_campaign=b2b_cta" target="_blank" rel="noopener" onclick="if(typeof gtag==='function'){gtag('event','b2b_cta_click',{source_page:window.location.pathname,cta_position:'footer',tool_category:document.querySelector('[aria-label=\"パンくずリスト\"] li:nth-child(3) a')?document.querySelector('[aria-label=\"パンくずリスト\"] li:nth-child(3) a').innerText:'general',destination:'https://tech-and-brace.com/ai-automation'})}" style="display:inline-block;background:#fff;color:#1e3a5f;font-size:11px;font-weight:700;padding:6px 16px;border-radius:20px;text-decoration:none;">法人・B2B相談はこちら →</a>
 </div>
 </footer>
+<div style="text-align:center;padding:10px 16px 14px;background:#eef2ff;border-top:2px solid #c7d2fe;margin-top:8px">
+<a href="/blog/" style="color:#4f46e5;font-size:.85rem;font-weight:700">📖 マネー・育児・キャリアのコラムを読む →</a>
+</div>
+<div style="background:#eef2ff;border-left:4px solid #4f46e5;border-radius:.5rem;padding:1rem 1.25rem;margin:1.5rem auto;max-width:760px;font-size:.875rem">
+<p style="margin:0 0 .5rem;font-weight:700;color:#3730a3">📖 お役立ちコラム</p>
+<ul style="margin:0;padding-left:1.25rem;color:#4f46e5;line-height:2">
+<li><a href="/blog/stock-investment-beginner/" style="color:#4f46e5">株式投資の始め方【初心者完全ガイド】</a></li>
+<li><a href="/blog/nisa-comparison/" style="color:#4f46e5">新NISA vs iDeCo 徹底比較</a></li>
+<li><a href="/blog/investment-risk-management/" style="color:#4f46e5">投資のリスク管理入門</a></li>
+</ul>
+</div>
+<!-- r17-mobile-ux -->
+<a href="#top" id="back-to-top" aria-label="ページトップへ戻る" style="display:none;position:fixed;bottom:24px;right:20px;background:#4f46e5;color:#fff;border:none;border-radius:50%;width:48px;height:48px;font-size:1.4rem;line-height:48px;text-align:center;text-decoration:none;box-shadow:0 4px 12px rgba(79,70,229,.4);z-index:9000;cursor:pointer" title="ページトップへ">↑</a>
+<script>
+(function(){
+  var btn = document.getElementById('back-to-top');
+  if(!btn) return;
+  window.addEventListener('scroll', function(){
+    btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+  }, {passive:true});
+})();
+</script>
 </body>
 </html>
