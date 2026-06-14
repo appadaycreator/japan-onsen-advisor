@@ -96,7 +96,7 @@ body {
 }
 .site-header-nav a:hover { color: white; }
 .site-header-nav .nav-cta {
-  background: var(--accent); color: var(--primary-dark);
+  background: #F97316; color: white;
   padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 12px;
 }
 
@@ -108,6 +108,18 @@ body {
 }
 .service-hero-inner {
   max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 300px; gap: 24px; align-items: center;
+}
+.hero-photos-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5px; border-radius: 14px; overflow: hidden;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+}
+.hero-photo-item { aspect-ratio: 1; overflow: hidden; }
+.hero-photo-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+.hero-photo-item:hover img { transform: scale(1.06); }
+@media (max-width: 900px) {
+  .service-hero-inner { grid-template-columns: 1fr; }
+  .hero-photos-grid { display: none; }
 }
 .service-hero h1 {
   font-family: 'Noto Serif JP', serif;
@@ -257,25 +269,35 @@ label {
 
 /* ── SUPERVISOR SECTION (inside page) ── */
 .page-supervisor {
-  background: white; border-radius: 16px; padding: 24px;
+  background: linear-gradient(135deg, #FBF6F0 0%, #F5EDE4 100%);
+  border-radius: 16px; padding: 24px;
   box-shadow: 0 2px 16px rgba(123,63,45,0.07);
   border: 1px solid var(--border); margin-bottom: 16px;
-  display: grid; grid-template-columns: 80px 1fr; gap: 16px; align-items: start;
+  display: grid; grid-template-columns: 90px 1fr; gap: 18px; align-items: start;
 }
 .page-sup-photo {
-  width: 72px; height: 88px;
-  background: linear-gradient(135deg, #C4813A 0%, #7B3F2D 100%);
-  border-radius: 12px;
+  width: 80px; height: 96px;
+  background: linear-gradient(150deg, #C4813A 0%, #7B3F2D 60%, #5C2E1F 100%);
+  border-radius: 14px;
   display: flex; align-items: flex-end; justify-content: center;
   overflow: hidden; position: relative;
+  box-shadow: 0 4px 14px rgba(123,63,45,0.3);
 }
 .page-sup-photo::before {
-  content: '👩'; font-size: 44px; line-height: 1;
+  content: '👩'; font-size: 50px; line-height: 1;
   position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
 }
-.page-sup-label { font-size: 10px; font-weight: 700; color: var(--accent); margin-bottom: 3px; }
-.page-sup-name { font-family: 'Noto Serif JP', serif; font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
+.page-sup-label { font-size: 10px; font-weight: 700; color: #F97316; margin-bottom: 3px; letter-spacing: 0.05em; }
+.page-sup-name { font-family: 'Noto Serif JP', serif; font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; }
 .page-sup-text { font-size: 12px; color: #666; line-height: 1.75; }
+.page-sup-badges {
+  display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px;
+}
+.page-sup-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: white; border: 1px solid var(--border); border-radius: 12px;
+  padding: 3px 10px; font-size: 11px; font-weight: 600; color: var(--primary);
+}
 
 /* ── CATEGORY ICONS ROW ── */
 .cat-icons-row {
@@ -346,7 +368,7 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
           <a href="lp/#features">特徴</a>
           <a href="lp/#spring-types">泉質</a>
           <a href="lp/#faq">FAQ</a>
-          <a href="lp/" class="nav-cta">LPを見る</a>
+          <a href="#quiz-start" class="nav-cta" onclick="if(document.getElementById('quiz-start').style.display==='none')startQuiz()">診断スタート</a>
         </nav>
       </div>
     </header>
@@ -354,15 +376,23 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
     <!-- SERVICE HERO -->
     <section class="service-hero">
       <div class="service-hero-inner">
-        <h1>温泉・旅館おすすめ診断</h1>
-        <p>全国温泉地からあなたにぴったりの旅館タイプを提案します</p>
-        <div class="quiz-cats">
-          <div class="quiz-cat">👥 誰と行く</div>
-          <div class="quiz-cat">💰 予算</div>
-          <div class="quiz-cat">🧑‍🤝‍🧑 人数</div>
-          <div class="quiz-cat">♨️ 泉質</div>
-          <div class="quiz-cat">🏨 旅館</div>
-          <div class="quiz-cat">🗾 エリア</div>
+        <div class="service-hero-text">
+          <h1>温泉・旅館おすすめ診断</h1>
+          <p>全国温泉地からあなたにぴったりの旅館タイプを提案します</p>
+          <div class="quiz-cats">
+            <div class="quiz-cat">👥 誰と行く</div>
+            <div class="quiz-cat">💰 予算</div>
+            <div class="quiz-cat">🧑‍🤝‍🧑 人数</div>
+            <div class="quiz-cat">♨️ 泉質</div>
+            <div class="quiz-cat">🏨 旅館</div>
+            <div class="quiz-cat">🗾 エリア</div>
+          </div>
+        </div>
+        <div class="hero-photos-grid" aria-hidden="true">
+          <div class="hero-photo-item"><img src="assets/photos/photo_02.jpg" alt="温泉旅館の露天風呂"></div>
+          <div class="hero-photo-item"><img src="assets/photos/photo_03.jpg" alt="日本の温泉地"></div>
+          <div class="hero-photo-item"><img src="assets/photos/photo_04.jpg" alt="家族温泉旅行"></div>
+          <div class="hero-photo-item"><img src="assets/photos/photo_05.jpg" alt="カップル温泉旅行"></div>
         </div>
       </div>
     </section>
@@ -442,9 +472,15 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
             <div class="page-supervisor">
               <div class="page-sup-photo" aria-hidden="true"></div>
               <div>
-                <div class="page-sup-label">温泉ソムリエ監修</div>
+                <div class="page-sup-label">SUPERVISED BY 温泉ソムリエ</div>
                 <div class="page-sup-name">温泉ソムリエ監修</div>
-                <p class="page-sup-text">全国300以上の温泉地を調査。目的・体調・予算に合った最適な温泉地と旅館選びのノウハウを監修しています。</p>
+                <p class="page-sup-text">全国300以上の温泉地を実際に訪問・調査。目的・体調・予算に合った最適な温泉地と旅館選びのノウハウをこの診断に凝縮しました。</p>
+                <div class="page-sup-badges">
+                  <span class="page-sup-badge">🗾 全国対応</span>
+                  <span class="page-sup-badge">🎯 シーン別提案</span>
+                  <span class="page-sup-badge">💰 予算目安付き</span>
+                  <span class="page-sup-badge">🍁 季節情報付き</span>
+                </div>
               </div>
             </div>
 
